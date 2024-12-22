@@ -5,7 +5,6 @@ const { WebSocket, WebSocketServer } = require("ws");
 const server = http.createServer(app);
 
 const wss = new WebSocketServer({ server: server });
-const host = "0.0.0.0";
 
 wss.on("connection", (ws) => {
   //   console.log("client connected with ID: " + client.id); //no id
@@ -27,6 +26,6 @@ wss.on("connection", (ws) => {
   });
 });
 
-server.listen(4000, host, () => {
+server.listen(4000, () => {
   console.log("WebSocket running on port 4000");
 });
