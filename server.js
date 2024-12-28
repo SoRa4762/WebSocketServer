@@ -12,7 +12,7 @@ wss.on("connection", (ws) => {
   console.log("Client Connected!");
 
   ws.on("message", (message) => {
-    const parsedMessage = JSON.parse(message).data;
+    const parsedMessage = JSON.parse(message);
     console.log("Client Message: " + parsedMessage);
     wss.clients.forEach((client) => {
       if (client.readyState === WebSocket.OPEN) {
